@@ -21,6 +21,24 @@ export default function calculate(obj, buttonName) {
     };
   }
 
+  if (buttonName === "DEL") {
+    if (obj.next >= "10") {
+      return {
+        total: obj.next.substring(0, obj.next.length - 1),
+        next: null,
+        operation: null,
+      }
+    }
+    else {
+      return {
+        total: null,
+        next: null,
+        opertion: null,
+      }
+    }
+  }
+
+
   if (isNumber(buttonName)) {
     if (buttonName === "0" && obj.next === "0") {
       return {};
