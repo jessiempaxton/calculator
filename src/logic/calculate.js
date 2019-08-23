@@ -22,18 +22,11 @@ export default function calculate(obj, buttonName) {
   }
 
   if (buttonName === "DEL") {
-    if (obj.next >= "10") {
+    if (obj.next || obj.total) {
       return {
         total: obj.next.substring(0, obj.next.length - 1),
-        next: null,
+        next: obj.next.substring(0, obj.next.length - 1),
         operation: null,
-      }
-    }
-    else {
-      return {
-        total: null,
-        next: null,
-        opertion: null,
       }
     }
   }
